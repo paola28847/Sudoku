@@ -1,4 +1,4 @@
-//import com.murcia.utils.*;
+import com.murcia.utils.*;
 
 public class Sudoku {
     private Tablero tablero;
@@ -16,9 +16,10 @@ public class Sudoku {
             Consola.clrscr(); Consola.gotoxy(0, 0);
             System.out.print(tablero);
             do
-                jugada = Input.nextLine("\nJugada --> fila,columna,valor: ");
-            while (!jugada.matches("^[0-8],\\s*[0-8],\\s*[1-9]$"));
-
+                jugada = Input.nextLine("\nJugada --> fila,columna,valor (*=FIN): ");
+            while (!jugada.matches("^[0-8],\\s*[0-8],\\s*[1-9]$")
+                    && !jugada.equals("*"));
+            if (jugada.equals("*")) break;
             String[] partes = jugada.split(",\\s*");
             int [] numeros = new int[partes.length];
             for (int i = 0; i < partes.length; i++)
