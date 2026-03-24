@@ -14,7 +14,7 @@ public class SudokuGame {
             Consola.clrscr(); // Borra pantalla
             Consola.gotoxy(0, 0);
             opc = mnu.select("Su opción [1-6]: ");
-            Input.nextLine("");
+            
             if (opc == '1') newGame();
             if (opc == '2') loadGame();
             if (opc == '3') topten();
@@ -27,7 +27,7 @@ public class SudokuGame {
             partidas = new ColaEnlazada<Sudoku>();
         Sudoku sudo = new Sudoku();
         sudo.iniciarNuevoJuego();
-        //partidas.add(new Sudoku());
+        
     }
     public static void loadGame() {
     
